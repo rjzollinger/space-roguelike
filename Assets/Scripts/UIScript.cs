@@ -8,6 +8,11 @@ public class UIScript : MonoBehaviour
     [Header("Heath Elements")]
     public Text healthText;
     public Slider healthSlider;
+
+    [Header("Score Elements")]
+    public Text scoreText;
+
+    // Debugging variables
     private int health = 100;
 
     // Start is called before the first frame update
@@ -23,6 +28,12 @@ public class UIScript : MonoBehaviour
         healthSlider.value = (float)health;
     }
 
+    // Set the UI score to score
+    public void SetScore(int score)
+    {
+        scoreText.text = score.ToString();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +41,7 @@ public class UIScript : MonoBehaviour
         {
             health--;
             SetUIHealth(health);
+            SetScore(health);
         }
     }
 }
