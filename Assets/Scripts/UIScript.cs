@@ -12,7 +12,10 @@ public class UIScript : MonoBehaviour
     public Button instructionsButton;
     public Button creditsButton;
     public Button quitButton;
-
+    [Space(10)]
+    public Button instructionsPanel;
+    public Button creditsPanel;
+    
     [Header("Heath Elements")]
     public Text healthText;
     public Slider healthSlider;
@@ -100,24 +103,34 @@ public class UIScript : MonoBehaviour
 
     #region Main Menu Button Callbacks
 
-    public void onPlayClick()
+    private void onPlayClick()
     {
         Debug.Log("Play");
     }
 
-    public void onInstructionsClick()
+    private void onInstructionsClick()
     {
-        Debug.Log("Instructions");
+        instructionsPanel.gameObject.SetActive(true);
     }
 
-    public void onCreditsClick()
+    private void onCreditsClick()
     {
-        Debug.Log("Credits");
+        creditsPanel.gameObject.SetActive(true);
     }
 
-    public void onQuitClick()
+    private void onQuitClick()
     {
         Debug.Log("Quit");
+    }
+
+    private void onCreditsPanelClick()
+    {
+        creditsPanel.gameObject.SetActive(false);
+    }
+
+    private void onInstructionsPanelClick()
+    {
+        instructionsPanel.gameObject.SetActive(false);
     }
 
     #endregion
@@ -129,6 +142,9 @@ public class UIScript : MonoBehaviour
         instructionsButton.onClick.AddListener(onInstructionsClick);
         creditsButton.onClick.AddListener(onCreditsClick);
         quitButton.onClick.AddListener(onQuitClick);
+
+        creditsPanel.onClick.AddListener(onCreditsPanelClick);
+        instructionsPanel.onClick.AddListener(onInstructionsPanelClick);
 
         StartTimer(true);
     }
