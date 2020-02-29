@@ -27,9 +27,13 @@ public class UIScript : MonoBehaviour
 
     #region UI State Variables
 
+    // Tracks if the timer is currently active
     private bool timerIsActive = false;
+    // Tracks if the timer is counting up or down
     private bool timerCountUp = true;
+    // Internal variable for controlling timing
     private float internalSecondTracker = 0;
+    // Current time to display in seconds
     private int seconds = 0;
 
     // Debugging variables
@@ -51,6 +55,10 @@ public class UIScript : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+
+    #endregion
+
+    #region Time Controls
 
     // Set the UI time to a minutes and seconds
     public void SetTime(int seconds)
