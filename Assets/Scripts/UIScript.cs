@@ -105,7 +105,8 @@ public class UIScript : MonoBehaviour
 
     private void onPlayClick()
     {
-        Debug.Log("Play");
+        // Temporary; update to load scene later
+        gameObject.SetActive(false);
     }
 
     private void onInstructionsClick()
