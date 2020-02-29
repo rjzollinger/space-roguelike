@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 1989630444}
   - component: {fileID: 1989630443}
   - component: {fileID: 1989630447}
+  - component: {fileID: 1989630448}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1255,8 +1256,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989630442}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2b78819b1060c479ec24abd015aed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1989630442}
+  ballProjectile: {fileID: 7719884476324609585, guid: 56bd5575f971fcc43a22d2b5154aa329,
+    type: 3}
+--- !u!114 &1989630448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989630442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60f4fa131b4c9374f86b3bbb3230b6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 630157716}
+  cameraTransform: {fileID: 0}
   moveScale: 0.2
