@@ -8,6 +8,7 @@ public class UIScript : MonoBehaviour
     [Header("Heath Elements")]
     public Text healthText;
     public Slider healthSlider;
+    private int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,10 @@ public class UIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown("space"))
+        {
+            health--;
+            SetUIHealth(health);
+        }
     }
 }
