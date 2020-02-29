@@ -20,10 +20,22 @@ public class UIScript : MonoBehaviour
     [Header("Score Elements")]
     public Text scoreText;
 
+    [Header("Time Elements")]
+    public Text timeText;
+
     #endregion
+
+    #region UI State Variables
+
+    private bool timerIsActive = false;
+    private bool timerCountUp = true;
+    private float internalSecondTracker = 0;
+    private int seconds = 0;
 
     // Debugging variables
     private int health = 100;
+    
+    #endregion
 
     #region UI Value Setters
 
@@ -38,6 +50,42 @@ public class UIScript : MonoBehaviour
     public void SetScore(int score)
     {
         scoreText.text = score.ToString();
+    }
+
+    // Set the UI time to a minutes and seconds
+    public void SetTime(int seconds)
+    {
+        this.seconds = seconds;
+        timeText.text = string.Format("{0:D2}:{1:D2}", seconds / 60, seconds % 60);
+    }
+
+    // Start timer, either counting up or down
+    public void StartTimer(bool countUp)
+    {
+        timerIsActive = true;
+        timerCountUp = countUp;
+        internalSecondTracker = 0;
+    }
+
+    // Stop timer without resetting time
+    public void StopTimer()
+    {
+        timerIsActive = false;
+        internalSecondTracker = 0;
+    }
+
+    // Updates the time based on active status and count direction
+    private void UpdateTime(bool timerIsActive, bool timerCountUp)
+    {
+        if (timerIsActive)
+        {
+            internalSecondTracker += Time.deltaTime;
+            if (seconds >= 0 && internalSecondTracker >= 1)
+            {
+                SetTime(this.seconds + (timerCountUp ? 1 : -1));
+                internalSecondTracker = 0;
+            }
+        }
     }
 
     #endregion
@@ -73,6 +121,8 @@ public class UIScript : MonoBehaviour
         instructionsButton.onClick.AddListener(onInstructionsClick);
         creditsButton.onClick.AddListener(onCreditsClick);
         quitButton.onClick.AddListener(onQuitClick);
+
+        StartTimer(true);
     }
 
     // Update is called once per frame
@@ -84,5 +134,7 @@ public class UIScript : MonoBehaviour
             SetUIHealth(health);
             SetScore(health);
         }
+
+        UpdateTime(timerIsActive, timerCountUp);
     }
 }
