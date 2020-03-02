@@ -8,6 +8,8 @@ public class UIScript : MonoBehaviour
     #region Public UI References
 
     [Header("Main Menu Elements")]
+    public GameObject mainMenuPanel;
+    [Space(10)]
     public Button playButtton;
     public Button instructionsButton;
     public Button creditsButton;
@@ -106,7 +108,8 @@ public class UIScript : MonoBehaviour
     private void onPlayClick()
     {
         // Temporary; update to load scene later
-        gameObject.SetActive(false);
+        mainMenuPanel.SetActive(false);
+        StartTimer(true);
     }
 
     private void onInstructionsClick()
@@ -146,8 +149,6 @@ public class UIScript : MonoBehaviour
 
         creditsPanel.onClick.AddListener(onCreditsPanelClick);
         instructionsPanel.onClick.AddListener(onInstructionsPanelClick);
-
-        StartTimer(true);
     }
 
     // Update is called once per frame
