@@ -240,10 +240,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5171498287589424410, guid: ea8d992299a1e594f8ac5ec28e493ce1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5171498287589424411, guid: ea8d992299a1e594f8ac5ec28e493ce1,
         type: 3}
       propertyPath: m_Radius
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171498287589424411, guid: ea8d992299a1e594f8ac5ec28e493ce1,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5171498287589424414, guid: ea8d992299a1e594f8ac5ec28e493ce1,
         type: 3}
@@ -396,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1284886262}
-  ballProjectile: {fileID: 7719884476324609585, guid: 56bd5575f971fcc43a22d2b5154aa329,
+  ballProjectile: {fileID: -1897569100641658448, guid: 56bd5575f971fcc43a22d2b5154aa329,
     type: 3}
   ballSpeed: 5
 --- !u!1 &1398586122

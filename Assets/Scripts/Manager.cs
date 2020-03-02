@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour
 {
     [Header("Unit References")]
     public Player player;
+    static public int existingBalls = 0;
     
     // Start is called before the first frame update
     void Start()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5907902512599014040}
   - component: {fileID: 4644410398772570533}
   - component: {fileID: -1897569100641658448}
+  - component: {fileID: -2696042248993764124}
   m_Layer: 0
   m_Name: Kickball
   m_TagString: Untagged
@@ -110,3 +111,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2696042248993764124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719884476324609585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b7b5755becfc249bec812e25818e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: -1897569100641658448}
+  player: {fileID: 5171498287589424384, guid: ea8d992299a1e594f8ac5ec28e493ce1, type: 3}
