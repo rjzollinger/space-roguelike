@@ -10,7 +10,7 @@ public class BallDisappear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,12 +19,12 @@ public class BallDisappear : MonoBehaviour
         
     }
 
-    void OnColliderEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("hi");
             Destroy(gameObject);
+            Manager.existingBalls--;
         }
     }
 }
