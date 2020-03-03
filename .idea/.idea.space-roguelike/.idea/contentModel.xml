@@ -19,7 +19,9 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CameraFollow.cs" t="Include" />
+          <e p="KickBall.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
+          <e p="UIScript.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
