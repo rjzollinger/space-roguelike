@@ -109,6 +109,7 @@ public class UIScript : MonoBehaviour
     {
         // Temporary; update to load scene later
         mainMenuPanel.SetActive(false);
+        Time.timeScale = 1;
         StartTimer(true);
     }
 
@@ -149,6 +150,7 @@ public class UIScript : MonoBehaviour
 
         creditsPanel.onClick.AddListener(onCreditsPanelClick);
         instructionsPanel.onClick.AddListener(onInstructionsPanelClick);
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
