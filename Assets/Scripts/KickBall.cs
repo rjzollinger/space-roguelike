@@ -44,7 +44,7 @@ public class KickBall : MonoBehaviour
         //     //ball.velocity = transform.forward * ballSpeed;
         //     Manager.existingBalls++;
         // }
-        if (Input.GetMouseButtonDown(0) && Manager.existingBalls < Manager.maxBalls)
+        if (Input.GetMouseButtonDown(0) && Manager.existingBalls < Manager.maxBalls && Manager.GetGameActiveStatus())
         {
             Kick();
         }

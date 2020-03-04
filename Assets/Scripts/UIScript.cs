@@ -115,6 +115,7 @@ public class UIScript : MonoBehaviour
     {
         // Temporary; update to load scene later
         mainMenuPanel.SetActive(false);
+        Manager.ToggleGameActiveStatus();
         Time.timeScale = 1;
         StartTimer(true);
     }

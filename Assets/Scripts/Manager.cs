@@ -13,11 +13,22 @@ public class Manager : MonoBehaviour
     private static int playerHealth = 100;
 
     private static bool updateQueued = false;
+    private static bool gameIsActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    public static void ToggleGameActiveStatus()
+    {
+        gameIsActive = !gameIsActive;
+    }
+
+    public static bool GetGameActiveStatus()
+    {
+        return gameIsActive;
     }
 
     // Update the existing ball count by amount
