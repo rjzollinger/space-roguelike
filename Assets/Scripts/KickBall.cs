@@ -15,7 +15,7 @@ public class KickBall : MonoBehaviour
                 Rigidbody ball = Instantiate(ballProjectile, transform.position + spawnOffset, Quaternion.identity);
                 //Ray direction = Camera.main.ScreenPointToRay(Input.mousePosition);
                 Rigidbody rb = ball.GetComponent<Rigidbody>();
-                rb.AddForce(15,3,15, ForceMode.VelocityChange);
+                rb.AddForce(12,2.5f,12, ForceMode.VelocityChange);
                 //ball.velocity = transform.forward * ballSpeed;
                 Manager.existingBalls++;
             }
