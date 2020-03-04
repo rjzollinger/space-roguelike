@@ -15,6 +15,7 @@ MonoBehaviour:
   components:
   - {fileID: 297354265416064345}
   - {fileID: 1532515595573109444}
+  - {fileID: 1096806060874420229}
 --- !u!114 &297354265416064345
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -62,6 +63,23 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
     min: 0
+--- !u!114 &1096806060874420229
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &1532515595573109444
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -74,14 +92,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: -0.000000115869305}
   gamma:
-    m_OverrideState: 0
-    m_Value: {x: 0.99833286, y: 0.99666816, z: 1, w: -0.22692886}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9646239, z: 0.9314095, w: 0.045385778}
   gain:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: -0.21180029}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.332829}
