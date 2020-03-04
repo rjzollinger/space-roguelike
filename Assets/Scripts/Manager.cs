@@ -7,8 +7,10 @@ public class Manager : MonoBehaviour
     [Header("Unit References")]
     public UIScript canvas;
     public Player player;
-    static public int existingBalls = 0;
-    static private int playerHealth = 100;
+
+    public static int existingBalls = 0;
+    public static int maxBalls = 30;
+    private static int playerHealth = 100;
     
     // Start is called before the first frame update
     void Start()
