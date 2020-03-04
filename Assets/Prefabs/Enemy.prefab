@@ -111,7 +111,7 @@ MonoBehaviour:
     type: 3}
   moveScale: 0.1
   rotationScale: 0.1
-  health: 0
+  health: 20
   aggroDistance: 15
   followDistance: 5
   projectileVelocity: 10

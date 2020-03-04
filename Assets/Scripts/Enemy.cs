@@ -61,6 +61,15 @@ public class Enemy : MonoBehaviour
         transform.Rotate(0,1,0);
     }
 
+    public void UpdateHealth(int amount) {
+        if (health > 0) {
+            health += Mathf.Max(health + amount, 0);
+        }
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
+    }
+
     void FixedUpdate()
     {
         float dist = Vector3.Distance(player.position, transform.position);

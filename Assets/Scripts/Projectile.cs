@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
             Manager.UpdateHealth(-damage);
             Destroy(gameObject);
         } else if (collider.gameObject.tag == "Enemy" && type == ProjectileType.Player) {
-            Debug.Log("Enemy hit");
+            Enemy enemy = collider.gameObject.GetComponent<Enemy>();
         }
     }
 }
