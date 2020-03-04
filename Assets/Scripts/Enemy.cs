@@ -62,7 +62,6 @@ public class Enemy : MonoBehaviour
     }
 
     public void UpdateHealth(int amount) {
-        Debug.Log(amount);
         if (health > 0) {
             health = Mathf.Max(health + amount, 0);
         }

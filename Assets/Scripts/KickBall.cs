@@ -28,7 +28,7 @@ public class KickBall : MonoBehaviour
             rb.AddForce(projectileForce * forceVector, ForceMode.VelocityChange);
 
             // Increment the ball counter
-            Manager.existingBalls++;
+            Manager.UpdateBallCount(1);
         }
     }
 

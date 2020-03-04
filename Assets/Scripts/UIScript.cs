@@ -28,6 +28,9 @@ public class UIScript : MonoBehaviour
     [Header("Time Elements")]
     public Text timeText;
 
+    [Header("Ammo Elements")]
+    public Text ammoText;
+
     #endregion
 
     #region UI State Variables
@@ -53,9 +56,15 @@ public class UIScript : MonoBehaviour
     }
 
     // Set the UI score to score
-    public void SetScore(int score)
+    public void SetUIScore(int score)
     {
         scoreText.text = score.ToString();
+    }
+
+    // Set the UI ammo to ammo
+    public void SetUIAmmo(int ammo)
+    {
+        ammoText.text = ammo.ToString();
     }
 
     #endregion

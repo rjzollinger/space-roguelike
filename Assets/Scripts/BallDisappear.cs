@@ -12,7 +12,7 @@ public class BallDisappear : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            Manager.existingBalls--;
+            Manager.UpdateBallCount(-1);
         }
     }
 }

@@ -11,21 +11,41 @@ public class Manager : MonoBehaviour
     public static int existingBalls = 0;
     public static int maxBalls = 30;
     private static int playerHealth = 100;
-    
+
+    private static bool updateQueued = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    public static void UpdateHealth(int update) {
-        if (playerHealth > 0) {
-            playerHealth += update;
+    // Update the existing ball count by amount
+    public static void UpdateBallCount(int amount)
+    {
+        existingBalls = Mathf.Clamp(existingBalls + amount, 0, maxBalls);
+        updateQueued = true;
+    }
+
+    // Update the player health by amount
+    public static void UpdateHealth(int amount)
+    {
+        if (playerHealth > 0)
+        {
+            playerHealth += amount;
         }
+        updateQueued = true;
     }
 
-    public void UpdateUI() {
-        canvas.SetUIHealth(playerHealth);
+    // Update all UI elements with new values
+    public void UpdateUI()
+    {
+        if (updateQueued)
+        {
+            canvas.SetUIHealth(playerHealth);
+            canvas.SetUIAmmo(maxBalls - existingBalls);
+            updateQueued = false;
+        }
     }
 
     // Update is called once per frame
