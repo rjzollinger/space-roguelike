@@ -156,13 +156,6 @@ public class UIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            health--;
-            SetUIHealth(health);
-            SetScore(health);
-        }
-
         UpdateTime(timerIsActive, timerCountUp);
     }
 }
