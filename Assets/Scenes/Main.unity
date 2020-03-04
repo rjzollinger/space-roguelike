@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 4989826}
   - component: {fileID: 4989825}
   - component: {fileID: 4989830}
+  - component: {fileID: 4989831}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -263,6 +264,20 @@ MonoBehaviour:
   ballProjectile: {fileID: -1897569100641658448, guid: 56bd5575f971fcc43a22d2b5154aa329,
     type: 3}
   ballSpeed: 5
+--- !u!114 &4989831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9a0cafce7594c4b991f108888bb088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6770673518013057965, guid: 9dfdf85520241a14482a2a215175b111,
+    type: 3}
 --- !u!1 &27422002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa03501b5796b61429858bf5b517b6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 73167046}
   player: {fileID: 0}
 --- !u!4 &182269658
 Transform:
