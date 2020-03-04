@@ -40,9 +40,6 @@ public class UIScript : MonoBehaviour
     private float internalSecondTracker = 0;
     // Current time to display in seconds
     private int seconds = 0;
-
-    // Debugging variables
-    private int health = 100;
     
     #endregion
 

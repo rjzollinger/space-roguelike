@@ -450,6 +450,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballProjectile: {fileID: -1897569100641658448, guid: 56bd5575f971fcc43a22d2b5154aa329,
     type: 3}
+  mainCam: {fileID: 1901717101}
+  projectileForce: 20
 --- !u!114 &4989831
 MonoBehaviour:
   m_ObjectHideFlags: 0
