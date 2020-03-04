@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5634944965371740037}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,10 +112,10 @@ MonoBehaviour:
   moveScale: 0.1
   rotationScale: 0.1
   health: 0
-  aggroDistance: 10
-  followDistance: 3
-  projectileVelocity: 20
-  shootInterval: 0.25
+  aggroDistance: 15
+  followDistance: 5
+  projectileVelocity: 10
+  shootInterval: 0.75
 --- !u!54 &5634944965371740037
 Rigidbody:
   m_ObjectHideFlags: 0
