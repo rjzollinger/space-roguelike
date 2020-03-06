@@ -164,5 +164,10 @@ public class UIScript : MonoBehaviour
     void Update()
     {
         UpdateTime(timerIsActive, timerCountUp);
+
+        if (Input.GetKeyDown("space"))
+        {
+            SetUIHealth(Random.Range(0,101));
+        }
     }
 }
