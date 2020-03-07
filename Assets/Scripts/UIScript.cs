@@ -50,10 +50,11 @@ public class UIScript : MonoBehaviour
     #region UI Value Setters
 
     // Set the UI health bar to health
-    public void SetUIHealth(int health)
+    public void SetUIHealth(int health, int maxHealth)
     {
         healthText.text = health.ToString();
         healthSlider.value = (float)health;
+        healthSlider.maxValue = (float)maxHealth;
     }
 
     // Set the UI score to score
@@ -67,6 +68,7 @@ public class UIScript : MonoBehaviour
     {
         ammoText.text = string.Format("{0:D2} / {1:D2}", ammo, maxAmmo);
         ammoSlider.value = (float)ammo;
+        ammoSlider.maxValue = (float)maxAmmo;
     }
 
     #endregion
@@ -169,7 +171,7 @@ public class UIScript : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            SetUIHealth(Random.Range(0,101));
+            SetUIHealth(Random.Range(0,101), 100);
             SetUIAmmo(Random.Range(0,61), 60);
         }
     }

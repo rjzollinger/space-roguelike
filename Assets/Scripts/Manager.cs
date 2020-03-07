@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour
     public static int existingBalls = 0;
     public static int maxBalls = 30;
     private static int playerHealth = 100;
+    private static int maxPlayerHealth = 100;
 
     private static bool updateQueued = false;
     private static bool gameIsActive = false;
@@ -53,7 +54,7 @@ public class Manager : MonoBehaviour
     {
         if (updateQueued)
         {
-            canvas.SetUIHealth(playerHealth);
+            canvas.SetUIHealth(playerHealth, maxPlayerHealth);
             canvas.SetUIAmmo(maxBalls - existingBalls, maxBalls);
             updateQueued = false;
         }
