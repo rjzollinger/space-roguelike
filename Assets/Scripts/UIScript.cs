@@ -30,6 +30,7 @@ public class UIScript : MonoBehaviour
 
     [Header("Ammo Elements")]
     public Text ammoText;
+    public Slider ammoSlider;
 
     #endregion
 
@@ -62,9 +63,10 @@ public class UIScript : MonoBehaviour
     }
 
     // Set the UI ammo to ammo
-    public void SetUIAmmo(int ammo)
+    public void SetUIAmmo(int ammo, int maxAmmo)
     {
-        ammoText.text = ammo.ToString();
+        ammoText.text = string.Format("{0:D2} / {1:D2}", ammo, maxAmmo);
+        ammoSlider.value = (float)ammo;
     }
 
     #endregion
@@ -168,6 +170,7 @@ public class UIScript : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             SetUIHealth(Random.Range(0,101));
+            SetUIAmmo(Random.Range(0,61), 60);
         }
     }
 }

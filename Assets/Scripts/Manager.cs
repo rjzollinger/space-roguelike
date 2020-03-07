@@ -54,7 +54,7 @@ public class Manager : MonoBehaviour
         if (updateQueued)
         {
             canvas.SetUIHealth(playerHealth);
-            canvas.SetUIAmmo(maxBalls - existingBalls);
+            canvas.SetUIAmmo(maxBalls - existingBalls, maxBalls);
             updateQueued = false;
         }
     }
