@@ -6,13 +6,21 @@ public class Movement : MonoBehaviour
 {
     public Transform cameraTransform;
     public float moveScale;
+    public float rollInterval;
+
+    private SmoothTransform smoothPosition;
+    private float rollTimer;
     private Vector3 direction;
+    private Vector3 rollDirection;
     private RaycastHit[] hits = new RaycastHit[0];
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rollTimer = rollInterval;
+        rollDirection = Vector3.forward;
+        smoothPosition = gameObject.GetComponent<SmoothTransform>();
+        smoothPosition.enabled = false;
     }
 
     // Handle movement of the player unit
@@ -36,6 +44,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKey("a")  || Input.GetKey("left"))
         {
             direction += Vector3.left;
+        }
+
+        if (direction != Vector3.zero)
+        {
+            rollDirection = direction;
+            Debug.Log(rollDirection);
         }
         
         transform.Translate(direction.normalized * moveScale);
@@ -66,6 +80,29 @@ public class Movement : MonoBehaviour
         hits = newHits;
     }
 
+    void TrackRoll()
+    {
+        rollTimer = Mathf.Min(rollTimer + Time.deltaTime, rollInterval);
+        if (Input.GetKey("space") && rollTimer >= rollInterval)
+        {
+            StartCoroutine(handleRoll());
+            rollTimer = 0;
+        }
+    }
+
+    private IEnumerator handleRoll()
+    {
+        // moveScale *= 2;
+        // transform.Translate(rollDirection.normalized * 20 * moveScale);
+        smoothPosition.enabled = true;
+        Vector3 target = transform.position + rollDirection.normalized * 100 * moveScale;
+        smoothPosition.UpdatePosition(target, 2);
+        yield return new WaitForSeconds(Mathf.Min(1,rollInterval));
+        // moveScale /= 2;
+        // smoothPosition.enabled = false;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -76,6 +113,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         TrackMove();
+        TrackRoll();
         // TransparentCheck();
     }
 }
