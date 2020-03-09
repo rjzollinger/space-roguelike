@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     public float rollInterval;
 
     private Rigidbody rb;
-    private SmoothTransform smoothPosition;
     private float rollTimer;
     private Vector3 direction;
     private Vector3 rollDirection;
@@ -22,8 +21,6 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rollTimer = rollInterval;
         rollDirection = Vector3.forward;
-        smoothPosition = gameObject.GetComponent<SmoothTransform>();
-        smoothPosition.enabled = false;
     }
 
     // Handle movement of the player unit
@@ -52,7 +49,6 @@ public class Movement : MonoBehaviour
         if (direction != Vector3.zero)
         {
             rollDirection = direction;
-            Debug.Log(rollDirection);
         }
         
         transform.Translate(direction.normalized * moveScale);
@@ -97,14 +93,9 @@ public class Movement : MonoBehaviour
 
     private IEnumerator handleRoll()
     {
-
-        // smoothPosition.enabled = true;
-        // Vector3 target = transform.position + rollDirection.normalized * 100 * moveScale;
-        // smoothPosition.UpdatePosition(target, 2);
         rb.velocity = rollDirection.normalized*rollVelocity;
         yield return new WaitForSeconds(Mathf.Min(1,rollInterval));
         rb.velocity = new Vector3(0,0,0);
-        // smoothPosition.enabled = false;
     }
 
     // Update is called once per frame

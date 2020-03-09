@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   moveScale: 0.2
-  rollVelocity: 10
+  rollVelocity: 25
   rollInterval: 0.5
 --- !u!54 &5171498287589424384
 Rigidbody:
