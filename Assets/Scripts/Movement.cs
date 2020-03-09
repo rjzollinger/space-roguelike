@@ -92,15 +92,11 @@ public class Movement : MonoBehaviour
 
     private IEnumerator handleRoll()
     {
-        // moveScale *= 2;
-        // transform.Translate(rollDirection.normalized * 20 * moveScale);
         smoothPosition.enabled = true;
         Vector3 target = transform.position + rollDirection.normalized * 100 * moveScale;
         smoothPosition.UpdatePosition(target, 2);
         yield return new WaitForSeconds(Mathf.Min(1,rollInterval));
-        // moveScale /= 2;
-        // smoothPosition.enabled = false;
-
+        smoothPosition.enabled = false;
     }
 
     // Update is called once per frame
