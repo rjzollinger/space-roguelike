@@ -169,7 +169,7 @@ public class UIScript : MonoBehaviour
     {
         UpdateTime(timerIsActive, timerCountUp);
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("u"))
         {
             SetUIHealth(Random.Range(0,101), 100);
             SetUIAmmo(Random.Range(0,61), 60);
