@@ -6,8 +6,10 @@ public class Movement : MonoBehaviour
 {
     public Transform cameraTransform;
     public float moveScale;
+    public float rollVelocity;
     public float rollInterval;
 
+    private Rigidbody rb;
     private SmoothTransform smoothPosition;
     private float rollTimer;
     private Vector3 direction;
@@ -17,6 +19,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         rollTimer = rollInterval;
         rollDirection = Vector3.forward;
         smoothPosition = gameObject.GetComponent<SmoothTransform>();
@@ -80,6 +83,8 @@ public class Movement : MonoBehaviour
         hits = newHits;
     }
 
+    // Handles roll/dash of the player unit
+    // Call every FixedUpdate
     void TrackRoll()
     {
         rollTimer = Mathf.Min(rollTimer + Time.deltaTime, rollInterval);
@@ -92,11 +97,14 @@ public class Movement : MonoBehaviour
 
     private IEnumerator handleRoll()
     {
-        smoothPosition.enabled = true;
-        Vector3 target = transform.position + rollDirection.normalized * 100 * moveScale;
-        smoothPosition.UpdatePosition(target, 2);
+
+        // smoothPosition.enabled = true;
+        // Vector3 target = transform.position + rollDirection.normalized * 100 * moveScale;
+        // smoothPosition.UpdatePosition(target, 2);
+        rb.velocity = rollDirection.normalized*rollVelocity;
         yield return new WaitForSeconds(Mathf.Min(1,rollInterval));
-        smoothPosition.enabled = false;
+        rb.velocity = new Vector3(0,0,0);
+        // smoothPosition.enabled = false;
     }
 
     // Update is called once per frame
