@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 4989825}
   - component: {fileID: 4989830}
   - component: {fileID: 4989831}
+  - component: {fileID: 4989832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -362,6 +363,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   moveScale: 0.2
+  rollVelocity: 0
+  rollInterval: 0
 --- !u!135 &4989826
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -466,6 +469,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6770673518013057965, guid: 9dfdf85520241a14482a2a215175b111,
     type: 3}
+--- !u!81 &4989832
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989823}
+  m_Enabled: 1
 --- !u!1 &48318342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1097,7 @@ MonoBehaviour:
   scoreText: {fileID: 1626971765}
   timeText: {fileID: 1183668676}
   ammoText: {fileID: 1602658003}
+  ammoSlider: {fileID: 0}
 --- !u!114 &73167047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20552,7 +20564,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1901717102}
   - component: {fileID: 1901717101}
-  - component: {fileID: 1901717100}
   - component: {fileID: 1901717099}
   - component: {fileID: 1901717098}
   - component: {fileID: 1901717097}
@@ -20626,14 +20637,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1901717100
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901717096}
-  m_Enabled: 1
 --- !u!20 &1901717101
 Camera:
   m_ObjectHideFlags: 0

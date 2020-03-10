@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float lifespan;
     public int damage;
     public ProjectileType type;
+    private AudioSource hitSound;
 
     public enum ProjectileType {
         Enemy,
@@ -19,12 +20,16 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject, lifespan);
         }
+
+        hitSound = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider collider)
     {
         GameObject target = collider.gameObject;
         if (collider.gameObject.tag == "Player" && type == ProjectileType.Enemy) {
+            //Debug.Log("hit");
+            AudioSource.PlayClipAtPoint(hitSound.clip, collider.gameObject.transform.position, 1f);
             Manager.UpdateHealth(-damage);
             Destroy(gameObject);
         } else if (collider.gameObject.tag == "Enemy" && type == ProjectileType.Player) {
