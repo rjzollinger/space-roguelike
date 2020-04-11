@@ -22,5 +22,9 @@ public class InWorldUIScript : MonoBehaviour
     void Update()
     {
         transform.position = mainCamera.WorldToScreenPoint(target.position) + offset;
+
+        if (Input.GetKeyDown("space")) {
+            gameObject.SetActive(false);
+        }
     }
 }
