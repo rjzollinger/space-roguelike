@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1546033691}
-  playButtton: {fileID: 2025158216}
+  playButton: {fileID: 2025158216}
   instructionsButton: {fileID: 1841406870}
   creditsButton: {fileID: 2078897892}
   quitButton: {fileID: 628761696}

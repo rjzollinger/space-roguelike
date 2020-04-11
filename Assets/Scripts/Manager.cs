@@ -42,10 +42,7 @@ public class Manager : MonoBehaviour
     // Update the player health by amount
     public static void UpdateHealth(int amount)
     {
-        if (playerHealth > 0)
-        {
-            playerHealth += amount;
-        }
+        playerHealth = Mathf.Clamp(playerHealth + amount, 0, maxPlayerHealth);
         updateQueued = true;
     }
 
@@ -64,5 +61,6 @@ public class Manager : MonoBehaviour
     void Update()
     {
         UpdateUI();
+        Debug.Log(GetGameActiveStatus());
     }
 }

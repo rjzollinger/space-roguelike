@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
         GameObject target = collider.gameObject;
         if (collider.gameObject.tag == "Player" && type == ProjectileType.Enemy) {
             //Debug.Log("hit");
-            AudioSource.PlayClipAtPoint(hitSound.clip, collider.gameObject.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(hitSound.clip, collider.gameObject.transform.position, 0.1f);
             Manager.UpdateHealth(-damage);
             Destroy(gameObject);
         } else if (collider.gameObject.tag == "Enemy" && type == ProjectileType.Player) {
