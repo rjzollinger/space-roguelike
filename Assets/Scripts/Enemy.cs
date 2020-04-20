@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Public Reference")]
     public Rigidbody projectile;
+    public InWorldUIScript enemyPanelPrefab;
 
     [Header("Movement/Turn Speed")]
     public float moveScale;
@@ -20,6 +21,10 @@ public class Enemy : MonoBehaviour
 
     private Transform player;
     private float fireTimer;
+
+    [Header("In-World UI Settings")]
+    public Vector3 inWorldPanelOffset;
+    private InWorldUIScript enemyPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -64,10 +69,25 @@ public class Enemy : MonoBehaviour
     public void UpdateHealth(int amount) {
         if (health > 0) {
             health = Mathf.Max(health + amount, 0);
+            enemyPanel.infoSlider.value = health;
         }
         if (health <= 0) {
+            Destroy(enemyPanel.gameObject);
             Destroy(gameObject);
         }
+    }
+
+    // Sets up in-world panel references
+    public void SetupEnemy()
+    {
+        // Get a reference to the scene manager (for access to the dynamic canvas)
+        Manager manager = GameObject.FindWithTag("Manager").GetComponent<Manager>();
+        enemyPanel = Instantiate(enemyPanelPrefab, manager.dynamicCanvas);
+
+        // Set the panel target, offset, and slider data
+        enemyPanel.SetTransformAndOffset(transform, inWorldPanelOffset);
+        enemyPanel.infoSlider.maxValue = health;
+        enemyPanel.infoSlider.value = health;
     }
 
     void FixedUpdate()
