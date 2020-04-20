@@ -61,6 +61,5 @@ public class Manager : MonoBehaviour
     void Update()
     {
         UpdateUI();
-        Debug.Log(GetGameActiveStatus());
     }
 }

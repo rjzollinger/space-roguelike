@@ -19522,7 +19522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1361626876}
-  playButtton: {fileID: 519085238}
+  playButton: {fileID: 519085238}
   instructionsButton: {fileID: 195755382}
   creditsButton: {fileID: 273760499}
   quitButton: {fileID: 140334036}
