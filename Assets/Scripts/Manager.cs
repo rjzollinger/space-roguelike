@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour
 {
     [Header("Unit References")]
     public UIScript canvas;
+    public Transform dynamicCanvas;
     public Player player;
 
     public static int existingBalls = 0;
