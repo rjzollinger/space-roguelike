@@ -49,19 +49,6 @@ public class UIScript : MonoBehaviour
 
     #region UI Value Setters
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        playButton.onClick.AddListener(onPlayClick);
-        instructionsButton.onClick.AddListener(onInstructionsClick);
-        creditsButton.onClick.AddListener(onCreditsClick);
-        quitButton.onClick.AddListener(onQuitClick);
-
-        creditsPanel.onClick.AddListener(onCreditsPanelClick);
-        instructionsPanel.onClick.AddListener(onInstructionsPanelClick);
-        Time.timeScale = 0;
-    }
-
     // Set the UI health bar to health
     public void SetUIHealth(int health, int maxHealth)
     {
@@ -163,6 +150,19 @@ public class UIScript : MonoBehaviour
     }
 
     #endregion
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playButton.onClick.AddListener(onPlayClick);
+        instructionsButton.onClick.AddListener(onInstructionsClick);
+        creditsButton.onClick.AddListener(onCreditsClick);
+        quitButton.onClick.AddListener(onQuitClick);
+
+        creditsPanel.onClick.AddListener(onCreditsPanelClick);
+        instructionsPanel.onClick.AddListener(onInstructionsPanelClick);
+        Time.timeScale = 0;
+    }
 
     // Update is called once per frame
     void Update()

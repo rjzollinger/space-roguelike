@@ -116,6 +116,8 @@ MonoBehaviour:
   followDistance: 5
   projectileVelocity: 10
   shootInterval: 0.75
+  audioClip: {fileID: 8300000, guid: e89dba3cdb4f0e54f90db92514ddabe2, type: 3}
+  clipVolume: 0.6
 --- !u!54 &5634944965371740037
 Rigidbody:
   m_ObjectHideFlags: 0

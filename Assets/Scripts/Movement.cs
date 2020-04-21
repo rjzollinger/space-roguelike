@@ -8,12 +8,16 @@ public class Movement : MonoBehaviour
     public float moveScale;
     public float rollVelocity;
     public float rollInterval;
+    public AudioSource audioSource;
 
     private Rigidbody rb;
     private float rollTimer;
     private Vector3 direction;
     private Vector3 rollDirection;
     private RaycastHit[] hits = new RaycastHit[0];
+
+    private float movingVolume = 0.5f;
+    private float stationaryVolume = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +53,9 @@ public class Movement : MonoBehaviour
         if (direction != Vector3.zero)
         {
             rollDirection = direction;
+            audioSource.volume = movingVolume;
+        } else {
+            audioSource.volume = stationaryVolume;
         }
         
         transform.Translate(direction.normalized * moveScale);

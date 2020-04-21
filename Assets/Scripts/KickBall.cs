@@ -6,9 +6,10 @@ public class KickBall : MonoBehaviour
 {
     public Rigidbody ballProjectile;
     public Camera mainCam;
+    public AudioClip audioClip;
     public float projectileForce;
     private float offset = 1.5f;
-    private Vector3 spawnOffset = new Vector3(1.25f, 0, 0);
+    //private Vector3 spawnOffset = new Vector3(1.25f, 0, 0);
     //public float ballSpeed = 2000;
 
     // Executes a kick by shooting a projectile toward the clicked location

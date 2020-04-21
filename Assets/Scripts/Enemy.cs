@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,9 @@ public class Enemy : MonoBehaviour
     public float followDistance;
     public float projectileVelocity;
     public float shootInterval;
-
+    public AudioClip audioClip;
+    public float clipVolume;
+    
     private Transform player;
     private float fireTimer;
 
@@ -66,6 +69,7 @@ public class Enemy : MonoBehaviour
             health = Mathf.Max(health + amount, 0);
         }
         if (health <= 0) {
+            AudioSource.PlayClipAtPoint(audioClip, player.position, clipVolume);
             Destroy(gameObject);
         }
     }
