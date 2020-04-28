@@ -14,16 +14,22 @@ public class Enemy : MonoBehaviour
     public float rotationScale;
 
     [Header("Attributes/Behavior")]
+    public EnemyType type;
     public int health;
     public float aggroDistance;
     public float followDistance;
     public float projectileVelocity;
     public float shootInterval;
+    public int explosionFragments;
     public AudioClip audioClip;
     public float clipVolume;
     
     private Transform player;
     private float fireTimer;
+    public enum EnemyType {
+        Shooter,
+        Bomber
+    }
 
     [Header("In-World UI Settings")]
     public Vector3 inWorldPanelOffset;
@@ -46,9 +52,12 @@ public class Enemy : MonoBehaviour
             rotationScale
         );
 
-        if (fireTimer > shootInterval) {
-            FireProjectile(player.position, rotation);
-            fireTimer = 0;
+        // Different attack behavior for different enemy types
+        if (type == EnemyType.Shooter) {
+            if (fireTimer > shootInterval) {
+                FireProjectile(player.position, rotation);
+                fireTimer = 0;
+            }
         }
 
         if (dist > followDistance) {
@@ -57,12 +66,30 @@ public class Enemy : MonoBehaviour
                 player.position,
                 moveScale
             );
+        } else {
+            if (type == EnemyType.Bomber) {
+                Explode();
+            }
         }
     }
 
     void FireProjectile(Vector3 target, Quaternion rotation) {
         Rigidbody newProjectile = Instantiate(projectile, transform.position, rotation);
         newProjectile.velocity = (target - transform.position).normalized * projectileVelocity;
+    }
+
+    void Explode() {
+        for (int i=0; i<explosionFragments; i++) {
+            float degrees = (360/explosionFragments)*i;
+            float radians = (2*Mathf.PI/explosionFragments)*i;
+
+            Quaternion rotation = Quaternion.Euler(0,degrees,0);
+            Rigidbody newProjectile = Instantiate(projectile, transform.position, rotation);
+
+            Vector3 direction = new Vector3(Mathf.Cos(radians),0,Mathf.Sin(radians));
+            newProjectile.velocity = direction * projectileVelocity;
+        }
+        Destroy(gameObject);
     }
 
     void Idle() {
