@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
             Vector3 direction = new Vector3(Mathf.Cos(radians),0,Mathf.Sin(radians));
             newProjectile.velocity = direction * projectileVelocity;
         }
-        Destroy(gameObject);
+        UpdateHealth(-health);
     }
 
     void Idle() {
