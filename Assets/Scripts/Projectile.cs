@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public ProjectileType type;
     public float lifespan;
     public int damage;
-    public ProjectileType type;
+    public float pickupDistance;
+    public float pickupMoveScale;
+
     private AudioSource hitSound;
+    private Transform player;
+    private float initializationTime;
 
     public enum ProjectileType {
         Enemy,
@@ -22,6 +27,8 @@ public class Projectile : MonoBehaviour
         }
 
         hitSound = GetComponent<AudioSource>();
+        player = GameObject.Find("Player").transform;
+        initializationTime = Time.timeSinceLevelLoad;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -47,6 +54,31 @@ public class Projectile : MonoBehaviour
         } else if (collision.gameObject.tag == "Enemy" && type == ProjectileType.Player) {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.UpdateHealth(-damage);
+        }
+    }
+
+    void MoveTowardsPlayer()
+    {
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            player.position,
+            pickupMoveScale
+        );
+    }
+
+    void FixedUpdate()
+    {
+        if (type == ProjectileType.Player)
+        {
+            float dist = Vector3.Distance(player.position, transform.position);
+            if (dist < pickupDistance)
+            {
+                float timeSinceInitialization = Time.timeSinceLevelLoad - initializationTime;
+                if (timeSinceInitialization > 1)
+                {
+                    MoveTowardsPlayer();
+                }
+            }
         }
     }
 }
