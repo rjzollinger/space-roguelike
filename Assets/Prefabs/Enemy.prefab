@@ -109,19 +109,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: -3981485483606722497, guid: 6e8936aa8b7687545b1721c6156e2d00,
     type: 3}
-  manager: {fileID: 0}
   enemyPanelPrefab: {fileID: 8962932673359160118, guid: f63f1a6c389b3ca4e97d6be08800813a,
     type: 3}
-  moveScale: 0.1
+  moveScale: 0.12
   rotationScale: 0.1
+  type: 0
   health: 10
-  aggroDistance: 15
+  aggroDistance: 50
   followDistance: 5
   projectileVelocity: 10
   shootInterval: 0.75
-  inWorldPanelOffset: {x: 0, y: 25, z: 0}
+  explosionFragments: 0
   audioClip: {fileID: 8300000, guid: e89dba3cdb4f0e54f90db92514ddabe2, type: 3}
   clipVolume: 0.6
+  inWorldPanelOffset: {x: 0, y: 25, z: 0}
 --- !u!54 &5634944965371740037
 Rigidbody:
   m_ObjectHideFlags: 0

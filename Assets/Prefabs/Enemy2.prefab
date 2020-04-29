@@ -112,11 +112,11 @@ MonoBehaviour:
     type: 3}
   enemyPanelPrefab: {fileID: 8962932673359160118, guid: f63f1a6c389b3ca4e97d6be08800813a,
     type: 3}
-  moveScale: 0.1
+  moveScale: 0.15
   rotationScale: 0.1
   type: 1
   health: 10
-  aggroDistance: 15
+  aggroDistance: 50
   followDistance: 5
   projectileVelocity: 10
   shootInterval: 0.75
