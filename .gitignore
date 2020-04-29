@@ -49,4 +49,5 @@ crashlytics-build.properties
 
 # Firebase
 .firebaserc
+.firebase/
 firebase.json
