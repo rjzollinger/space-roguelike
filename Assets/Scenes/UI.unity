@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6875, b: 0.25, a: 1}
+  m_Color: {r: 0.25098038, g: 0.7503267, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2496,7 +2496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6875, b: 0.25, a: 1}
+  m_Color: {r: 0.25098038, g: 0.7503267, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3473,7 +3473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6875, b: 0.25, a: 1}
+  m_Color: {r: 0.25098038, g: 0.7503267, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7421,7 +7421,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Welcome to SPACE, a space themed roguelike game.  Just play the game.
+  m_Text: 'A space themed roguelike game.
+
+
+    WASD to move.
+
+    LEFT CLICK to
+    shoot.
+
+    SPACE to dash.
+
+
+    Ammo is limited.  Make sure to recollect your
+    bullets.'
 --- !u!222 &614256346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9602,7 +9614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6875, b: 0.25, a: 1}
+  m_Color: {r: 0.25098038, g: 0.7503267, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -21051,7 +21063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.199, g: 0.73299986, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
