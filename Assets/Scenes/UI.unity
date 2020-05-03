@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 389a26718a79543489abdf1d0eeea2f6,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -398,7 +398,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b05dac2da620cd14cb50185bfa1cd233, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21703,8 +21703,12 @@ MonoBehaviour:
     rate: 2
   - name: 
     enemy: {fileID: 5634944965371740030, guid: 517db394dd9b4e04c8e684bcf9da01ca, type: 3}
-    count: 50
-    rate: 10
+    count: 3
+    rate: 2
+  - name: 
+    enemy: {fileID: 2808424674721111208, guid: e075823807b18d94b995c43d62ea0a40, type: 3}
+    count: 3
+    rate: 2
   spawnPoints:
   - {fileID: 924376538}
   - {fileID: 1775087523}
