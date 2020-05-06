@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\chris\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\chris\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_space-roguelike.1312437076.00" t="ExcludeRecursive" />
-    <e p="C:\Users\chris\space-roguelike" t="IncludeRecursive">
+    <e p="C:\Users\prest\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\prest\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_space-roguelike.-2057490815.00" t="ExcludeRecursive" />
+    <e p="C:\Users\prest\space-roguelike" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -20,12 +20,17 @@
         <e p="Scripts" t="Include">
           <e p="BallDisappear.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
+          <e p="DontDestroyOnLoad.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
+          <e p="InWorldUIScript.cs" t="Include" />
           <e p="KickBall.cs" t="Include" />
+          <e p="LevelLoader.cs" t="Include" />
           <e p="Manager.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
+          <e p="NextRoom.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
+          <e p="SmoothTransform.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
           <e p="UIScript.cs" t="Include" />
         </e>

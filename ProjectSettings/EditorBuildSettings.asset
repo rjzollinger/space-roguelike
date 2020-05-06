@@ -9,6 +9,36 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Enemy2.unity
-    guid: 69844c7cfb85cbc4aad30483a35dd91e
+    path: Assets/Scenes/Rooms/Room0.unity
+    guid: dbf3c40950e80fc48aaee4885fa22b74
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room1.unity
+    guid: 6ec7e2fb8d1346248a0dbb2b07d598c8
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room2.unity
+    guid: 59880693b4bb90b4d80241acd827827f
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room3.unity
+    guid: fae5ea0416324a2419da4aca811f12a7
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room4.unity
+    guid: a0ac3fa4391dc2f4cbcb3092922d3c89
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room5.unity
+    guid: ccf987ce77e960649b0e304bbc845aa3
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room6.unity
+    guid: 4d17624dcb2b7224fb34980dbae4d699
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room7.unity
+    guid: 6630bfb1cff92a6468e05ee3bf6b0662
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room8.unity
+    guid: 15cfae4881f0d4347afef08e0420dc50
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room9.unity
+    guid: 2469c6a89ca3a7544b5134992ceae474
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room10.unity
+    guid: 32e2cb150f456b04fba45786d81ce3ac
   m_configObjects: {}

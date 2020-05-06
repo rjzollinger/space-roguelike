@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -17,10 +18,14 @@ public class Manager : MonoBehaviour
     private static bool updateQueued = false;
     private static bool gameIsActive = false;
 
+    private LevelLoader LevelLoader;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        canvas = GameObject.Find("Canvas").GetComponent<UIScript>();
+        dynamicCanvas = GameObject.Find("DynamicCanvas").GetComponent<Transform>();
+        LevelLoader = canvas.GetComponent<LevelLoader>();
     }
 
     public static void ToggleGameActiveStatus()
@@ -63,5 +68,10 @@ public class Manager : MonoBehaviour
     {
         UpdateUI();
         //Debug.Log(GetGameActiveStatus());
+    }
+
+    public void NextRoom()
+    {
+        LevelLoader.LoadNextLevel(Random.Range(1,10));
     }
 }
