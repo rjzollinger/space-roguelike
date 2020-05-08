@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class NextRoom : MonoBehaviour
 {
     public Manager GameState;
+
+    public GameObject EnemyManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class NextRoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && EnemyManager.GetComponent<Spawner>().roomComplete)
         {
             GameState.NextRoom();
         }

@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
 
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
+    public bool roomComplete = false;
     public float WaveCountdown
     {
         get { return waveCountdown; }
@@ -46,6 +47,7 @@ public class Spawner : MonoBehaviour
     {
         if (spawnPoints.Length == 0)
         {
+            roomComplete = true;
             Debug.LogError("No spawn points referenced.");
         }
 
@@ -56,7 +58,7 @@ public class Spawner : MonoBehaviour
     {
         if (state == SpawnState.WAITING)
         {
-            if (!EnemyIsAlive())
+            if (!EnemyIsAlive() && !roomComplete)
             {
                 WaveCompleted();
             }
@@ -66,7 +68,7 @@ public class Spawner : MonoBehaviour
             }
         }
 
-        if (waveCountdown <= 0)
+        if (waveCountdown <= 0 && !roomComplete)
         {
             if (state != SpawnState.SPAWNING)
             {
@@ -86,10 +88,9 @@ public class Spawner : MonoBehaviour
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
-        if (nextWave + 1 > waves.Length - 1)
+        if (nextWave == waves.Length - 1)
         {
-            nextWave = 0;
-            Debug.Log("ALL WAVES COMPLETE! Looping...");
+            roomComplete = true;
         }
         else
         {
