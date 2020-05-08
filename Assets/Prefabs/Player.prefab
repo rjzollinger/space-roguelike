@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6506977852530884359}
-  m_Mesh: {fileID: 3252224991405807402, guid: 427d2e7ddaf170d4299c0d47ee0712a5, type: 3}
+  m_Mesh: {fileID: 3252224991405807402, guid: 0e8017581a547d844b87e7ae14e1fb12, type: 3}
 --- !u!23 &6506977852530884603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -130,7 +130,6 @@ MonoBehaviour:
   moveScale: 0.2
   rollVelocity: 25
   rollInterval: 0.2
-  audioSource: {fileID: 0}
 --- !u!114 &6506977852530884606
 MonoBehaviour:
   m_ObjectHideFlags: 0
