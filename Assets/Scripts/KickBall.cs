@@ -6,7 +6,6 @@ public class KickBall : MonoBehaviour
 {
     public Rigidbody ballProjectile;
     public Camera mainCam;
-    public AudioClip audioClip;
     public float projectileForce;
     private float offset = 2.5f;
     //private Vector3 spawnOffset = new Vector3(1.25f, 0, 0);

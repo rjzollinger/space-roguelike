@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float moveScale;
     public float rollVelocity;
     public float rollInterval;
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
 
     private Rigidbody rb;
     private float rollTimer;
@@ -53,9 +53,6 @@ public class Movement : MonoBehaviour
         if (direction != Vector3.zero)
         {
             rollDirection = direction;
-            audioSource.volume = movingVolume;
-        } else {
-            audioSource.volume = stationaryVolume;
         }
         
         transform.Translate(direction.normalized * moveScale);
