@@ -18,7 +18,10 @@ public class NextRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (EnemyManager.GetComponent<Spawner>().roomComplete)
+        {
+            gameObject.GetComponent<Renderer>().material.SetFloat("EmissiveOn", 1f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
