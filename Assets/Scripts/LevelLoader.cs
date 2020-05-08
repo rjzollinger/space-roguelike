@@ -16,8 +16,6 @@ public class LevelLoader : MonoBehaviour
 
     public void Transition(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("test: hello");
-        
         StartCoroutine(LoadLevel());
     }
 
@@ -34,8 +32,6 @@ public class LevelLoader : MonoBehaviour
     
     IEnumerator LoadLevel()
     {
-        
-        Debug.Log("test: world");
         transition.SetTrigger("End");
         
         yield return new WaitForSeconds(1);
