@@ -42,6 +42,8 @@ public class Projectile : MonoBehaviour
         } else if (collider.gameObject.tag == "Enemy" && type == ProjectileType.Player) {
             Enemy enemy = collider.gameObject.GetComponent<Enemy>();
             enemy.UpdateHealth(-damage);
+        } else if (collider.gameObject.tag != "Enemy" && collider.gameObject.tag != "Floor" && type == ProjectileType.Enemy) {
+            Destroy(gameObject);
         }
     }
 

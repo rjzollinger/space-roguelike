@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8868267191552289069}
   m_Layer: 0
   m_Name: EnemyProjectile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,9 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50fd31ad381b01043b8fba874a3e3145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   lifespan: 20
   damage: 5
-  type: 0
+  pickupDistance: 0
+  pickupMoveScale: 0
 --- !u!54 &-3981485483606722497
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@
           <e p="Manager.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
           <e p="NextRoom.cs" t="Include" />
+          <e p="PlayBackgroundMusic.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
           <e p="SmoothTransform.cs" t="Include" />
