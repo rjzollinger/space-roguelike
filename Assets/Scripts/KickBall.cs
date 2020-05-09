@@ -17,9 +17,11 @@ public class KickBall : MonoBehaviour
         // Cast a ray from the camera into the scene
         RaycastHit hit;
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        int bulletPlaneLayer = 1 << 8;
         
-        if (Physics.Raycast(ray, out hit)) {
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, bulletPlaneLayer, QueryTriggerInteraction.UseGlobal)) {
             // Get the direction to the clicked location
+            Debug.Log("collided with bulletplane");
             Vector3 forceVector = (hit.point - transform.position).normalized;
 
             // Spawn projectile and add force to it
