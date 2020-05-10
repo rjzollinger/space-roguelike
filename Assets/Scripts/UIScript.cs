@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class UIScript : MonoBehaviour
     [Space(10)]
     public Button instructionsPanel;
     public Button creditsPanel;
+    public Button endPanel;
     
     [Header("Health Elements")]
     public Text healthText;
@@ -31,6 +33,10 @@ public class UIScript : MonoBehaviour
     [Header("Ammo Elements")]
     public Text ammoText;
     public Slider ammoSlider;
+
+    [Header("End Panel Elements")]
+    public Text endTitle;
+    public Text endText;
 
     #endregion
 
@@ -118,6 +124,7 @@ public class UIScript : MonoBehaviour
     private void onPlayClick()
     {
         // Temporary; update to load scene later
+        Manager.ResetPlayer();
         mainMenuPanel.SetActive(false);
         Manager.ToggleGameActiveStatus();
         Time.timeScale = 1;
@@ -149,7 +156,46 @@ public class UIScript : MonoBehaviour
         instructionsPanel.gameObject.SetActive(false);
     }
 
+    private void onEndPanelClick()
+    {
+        endPanel.gameObject.SetActive(false);
+        SceneManager.LoadScene(0);
+        DeleteAll();
+    }
+
     #endregion
+
+    private void DeleteAll()
+    {
+         foreach (GameObject o in Resources.FindObjectsOfTypeAll<GameObject>()) {
+             if (o.GetComponent<DontDestroyOnLoad>() != null)
+             {
+                 Destroy(o);
+             }
+         }
+     }
+
+    // Show the game over screen
+    public void ShowDeathScreen()
+    {
+        Time.timeScale = 0;
+        mainMenuPanel.SetActive(true);
+        endPanel.gameObject.SetActive(true);
+        endTitle.text = "Defeat";
+        endText.text = "You failed to escape the ruins...\n\nYou survived for:\n" + string.Format("{0:D2}:{1:D2}", seconds / 60, seconds % 60);
+        Manager.ToggleGameActiveStatus();
+    }
+
+    // Show the victory screen
+    public void ShowWinScreen()
+    {
+        Time.timeScale = 0;
+        mainMenuPanel.SetActive(true);
+        endPanel.gameObject.SetActive(true);
+        endTitle.text = "Success";
+        endText.text = "You have successfully escaped from the ruins\n\nIt took you:\n" + string.Format("{0:D2}:{1:D2}", seconds / 60, seconds % 60);
+        Manager.ToggleGameActiveStatus();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -161,6 +207,7 @@ public class UIScript : MonoBehaviour
 
         creditsPanel.onClick.AddListener(onCreditsPanelClick);
         instructionsPanel.onClick.AddListener(onInstructionsPanelClick);
+        endPanel.onClick.AddListener(onEndPanelClick);
         Time.timeScale = 0;
     }
 

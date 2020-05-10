@@ -10,6 +10,9 @@ public class Manager : MonoBehaviour
     public Transform dynamicCanvas;
     public Player player;
 
+    public readonly int roomsNeeded = 8;
+    private int roomsCompleted = 0; 
+
     public static int existingBalls = 0;
     public static int maxBalls = 30;
     private static int playerHealth = 100;
@@ -26,6 +29,14 @@ public class Manager : MonoBehaviour
         canvas = GameObject.Find("Canvas").GetComponent<UIScript>();
         dynamicCanvas = GameObject.Find("DynamicCanvas").GetComponent<Transform>();
         LevelLoader = canvas.GetComponent<LevelLoader>();
+    }
+
+    public int GetRoomsCompleted() {
+        return roomsCompleted;
+    }
+
+    public void IncrementRoomsCompleted() {
+        roomsCompleted++;
     }
 
     public static void ToggleGameActiveStatus()
@@ -52,6 +63,12 @@ public class Manager : MonoBehaviour
         updateQueued = true;
     }
 
+    public static void ResetPlayer()
+    {
+        UpdateHealth(maxPlayerHealth);
+        UpdateBallCount(maxBalls);
+    }
+
     // Update all UI elements with new values
     public void UpdateUI()
     {
@@ -63,11 +80,25 @@ public class Manager : MonoBehaviour
         }
     }
 
+    public void CheckDeath()
+    {
+        if (playerHealth <= 0 && gameIsActive) {
+            dynamicCanvas.gameObject.SetActive(false);
+            canvas.ShowDeathScreen();
+        }
+    }
+
+    public void WinGame()
+    {
+        canvas.ShowWinScreen();
+    }
+
     // Update is called once per frame
     void Update()
     {
         UpdateUI();
         //Debug.Log(GetGameActiveStatus());
+        CheckDeath();
     }
 
     public void NextRoom()

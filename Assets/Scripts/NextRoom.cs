@@ -26,8 +26,13 @@ public class NextRoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && EnemyManager.GetComponent<Spawner>().roomComplete)
+        if (GameState.GetRoomsCompleted() == GameState.roomsNeeded)
         {
+            GameState.WinGame();
+        }
+        else if (other.tag == "Player" && EnemyManager.GetComponent<Spawner>().roomComplete)
+        {
+            GameState.IncrementRoomsCompleted();
             GameState.NextRoom();
         }
     }

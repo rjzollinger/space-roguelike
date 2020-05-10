@@ -87,9 +87,11 @@ public class Movement : MonoBehaviour
     // Call every FixedUpdate
     void TrackRoll()
     {
-        rollTimer = Mathf.Min(rollTimer + Time.deltaTime, rollInterval);
+        // rollTimer = Mathf.Min(rollTimer + Time.deltaTime, rollInterval);
+        rollTimer += Time.deltaTime;
         if (Input.GetKeyDown("space") && rollTimer >= rollInterval)
         {
+            Debug.Log("Roll");
             StartCoroutine(handleRoll());
             rollTimer = 0;
         }
@@ -105,14 +107,13 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TrackRoll();
     }
     
     // FixedUpdate for physics based code
     void FixedUpdate()
     {
         TrackMove();
-        TrackRoll();
         // TransparentCheck();
     }
 }
