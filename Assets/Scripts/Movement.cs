@@ -88,7 +88,7 @@ public class Movement : MonoBehaviour
     void TrackRoll()
     {
         rollTimer = Mathf.Min(rollTimer + Time.deltaTime, rollInterval);
-        if (Input.GetKey("space") && rollTimer >= rollInterval)
+        if (Input.GetKeyDown("space") && rollTimer >= rollInterval)
         {
             StartCoroutine(handleRoll());
             rollTimer = 0;
